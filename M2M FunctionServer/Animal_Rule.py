@@ -3,7 +3,7 @@
 
 __author__ = 'Nathaniel'
 
-import class_M2MFS_Obj
+import class_AnimalFS_Obj
 import class_M2MFS_MQTTManager
 import json
 import copy
@@ -34,7 +34,7 @@ _g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-SP", "InputIO": "NO
 
 class FunctionServerMappingRules():
     def __init__(self):
-        self.jsonObj = class_M2MFS_Obj.JSON_REPTOPICLIST()
+        self.jsonObj = class_AnimalFS_Obj.JSON_REPTOPICLIST()
 
     def replyM2MTopicToNode(self, topicName, NodeName):
         self.jsonObj.Gateway = NodeName
@@ -50,7 +50,7 @@ class FunctionServerMappingRules():
             IsNodeHaveM2MMappingRules = True
             for SingleM2MMappingRule in readyToReplyTopics:
                 #### ASSIGN TO M2M FS ####
-                self.SubscribeTopics = class_M2MFS_Obj.SubscribeTopicsObj()
+                self.SubscribeTopics = class_AnimalFS_Obj.SubscribeTopicsObj()
                 self.SubscribeTopics.TopicName = SingleM2MMappingRule["InputNode"] + \
                                                  "/" + SingleM2MMappingRule["InputIO"]  # FS1
                 self.SubscribeTopics.Node = SingleM2MMappingRule["OutputNode"]  # M2M
@@ -70,10 +70,10 @@ class FunctionServerMappingRules():
         pm.MQTT_PublishMessage(topicName, jsonstring)
 
     def replyM2MRulesAll(self, topicName):
-        self.jsonObj = class_M2MFS_Obj.JSON_M2MRULE()
+        self.jsonObj = class_AnimalFS_Obj.JSON_M2MRULE()
 
         for SingleM2MMappingRule in _g_M2MRulesMappingList:
-            self.Rule = class_M2MFS_Obj.RuleObj()
+            self.Rule = class_AnimalFS_Obj.RuleObj()
             self.Rule.RuleID = SingleM2MMappingRule["RuleID"]
             self.Rule.InputNode = SingleM2MMappingRule["InputNode"]
             self.Rule.InputIO = SingleM2MMappingRule["InputIO"]

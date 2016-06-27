@@ -10,7 +10,7 @@ import sys
 import class_M2MFS_MQTTManager
 import class_M2MFS_Obj
 import M2MFunctionServer
-from M2MRule import *
+from Animal_Rule import *
 #from Animal_Rule import *
 from terminalColor import bcolors
 
@@ -21,7 +21,7 @@ class DecisionAction():
 
         ########## Control REQTOPICLIST ##########
 
-        if (spreate_obj_json_msg["Control"] == "M2M_REQTOPICLIST"):
+        if (spreate_obj_json_msg["Control"] == "Guide_REQTOPICLIST"):
             print(bcolors.OKBLUE + "[DecisionActions] REQTOPICLIST TopicName: %s" % spreate_obj_json_msg[
                 "Source"] + bcolors.ENDC)
 

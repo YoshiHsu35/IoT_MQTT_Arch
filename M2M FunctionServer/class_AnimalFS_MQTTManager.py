@@ -9,9 +9,9 @@ import time
 import json
 import copy
 import sys
-import class_M2MFS_DecisionActions
+import class_AnimalFS_DecisionActions
 from terminalColor import bcolors
-import  M2MFunctionServer
+import  Animal_FunctionServer
 
 
 # 上層目錄
@@ -59,8 +59,8 @@ class SubscriberManager():
                 if(msg.payload!=""):
                     # print("[INFO] Receive from MQTT %s" % msg.payload)
                     _obj_json_msg = json.loads(str(msg.payload, encoding="UTF-8"))
-                    if(_obj_json_msg["Source"] != M2MFunctionServer._g_cst_FSUUID):
-                        class_M2MFS_DecisionActions.DecisionAction().Judge(_obj_json_msg)
+                    if(_obj_json_msg["Source"] != Animal_FunctionServer._g_cst_FSUUID):
+                        class_AnimalFS_DecisionActions.DecisionAction().Judge(_obj_json_msg)
             except (RuntimeError, TypeError, NameError) as e:
                 print(bcolors.FAIL + "[ERROR] Couldn't converte json to Objet! Error Details:" + str(e) + bcolors.ENDC)
 

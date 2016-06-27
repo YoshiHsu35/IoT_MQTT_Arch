@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Nathaniel'
 import json
-import M2MFunctionServer
+import Animal_FunctionServer
 
 ###############################################################
 
@@ -14,7 +14,7 @@ class JSON_REPTOPICLIST():
                           sort_keys=True)  # , indent=4) 要indent在uncommit
 
     def __init__(self):
-        self.Source = M2MFunctionServer._g_cst_FSUUID
+        self.Source = Animal_FunctionServer._g_cst_FSUUID
         self.Gateway = ""
         self.Control = "M2M_REPTOPICLIST"
         self.SubscribeTopics = []  # SubscribeTopicsObj

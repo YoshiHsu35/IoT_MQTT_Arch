@@ -8,7 +8,7 @@ import json
 import copy
 import sys
 from terminalColor import bcolors
-import class_M2MFS_MQTTManager
+import class_AnimalFS_MQTTManager
 
 
 # 上層目錄
@@ -40,11 +40,11 @@ def main():
              '"Function":"Guide","FSIP":"10.0.0.2" ,"MappingNodes":"Animal_Data", "Source":"%s"}' % \
              (_g_cst_FSUUID, _g_cst_FSUUID)
 
-    publisherManger = class_M2MFS_MQTTManager.PublisherManager()
+    publisherManger = class_AnimalFS_MQTTManager.PublisherManager()
     publisherManger.MQTT_PublishMessage(_g_cst_MQTTRegTopicName, REGMSG)
 
     # 訂閱自身名稱topic
-    class_M2MFS_MQTTManager.SubscriberThreading(_g_cst_FSUUID).start()
+    class_AnimalFS_MQTTManager.SubscriberThreading(_g_cst_FSUUID).start()
 
 
 if __name__ == '__main__':
