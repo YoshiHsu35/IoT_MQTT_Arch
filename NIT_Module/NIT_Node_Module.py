@@ -50,6 +50,8 @@ class NIT_Node:
                     except (RuntimeError, TypeError, NameError) as e:
                         print(bcolors.FAIL + "[ERROR] Send Request for topic list error!" + str(e) + bcolors.ENDC)
                         return
+
+                    #ouo
         elif separation_obj_json_msg["Control"] == "M2M_REPTOPICLIST":
             for subTopic in separation_obj_json_msg["SubscribeTopics"]:
                 RuleObj = class_Node_Obj.M2M_RuleObj(subTopic["TopicName"], subTopic["Target"],
