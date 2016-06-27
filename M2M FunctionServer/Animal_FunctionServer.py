@@ -16,7 +16,7 @@ sys.path.append("..")
 import config_ServerIPList
 
 _g_cst_MQTTRegTopicName = "IOTSV/REG"  # 一開始要和IoT_Server註冊，故需要傳送信息至指定的MQTT Channel
-_g_cst_FSUUID = "FS1"
+_g_cst_FSUUID = "ShowAnimal"
 
 
 # _globalGWList = []
