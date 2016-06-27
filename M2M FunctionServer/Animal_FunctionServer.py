@@ -36,7 +36,7 @@ print(bcolors.HEADER + "::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 def main():
     REGMSG = '{"FunctionServer":"%s", "Control":"FS_REG",' \
-             '"Function":"M2M","FSIP":"10.0.0.1" ,"MappingNodes":"[IOs]", "Source":"%s"}' % \
+             '"Function":"Guide","FSIP":"10.0.0.2" ,"MappingNodes":"Animal_Data", "Source":"%s"}' % \
              (_g_cst_FSUUID, _g_cst_FSUUID)
 
     publisherManger = class_M2MFS_MQTTManager.PublisherManager()
