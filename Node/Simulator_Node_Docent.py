@@ -13,7 +13,7 @@ NodeUUID = "NODE-Docent1"
 # NodeUUID ="NODE-" +uuid.uuid1()
 
 Functions = ["LED1", "LED2", "SW1"]
-NodeFunctions = ['IOs', 'IPCams']
+NodeFunctions = ['IOs', 'Animal_Data']
 
 print("::::::::::::::::::::::::::::::::::::::::::\n")
 print("::::::::::::::::::::::::::::::::::::::::::\n")
@@ -69,12 +69,12 @@ def loop():
     decide = input("enter 't' to trigger")
     print(decide)
 
-    initMSGObj = {'TopicName': "NODE-01/SW1", 'Control': 'CALL', 'Source': "NODE-01", 'M2M_Value': flip}
+    initMSGObj = {'TopicName': "NODE-Docent1/CALL", 'Control': "CALL", 'Source': "NODE-Docent1", 'M2M_Value': flip}
     initMSGSTR = json.dumps(initMSGObj)
 
     if (decide == "t"):
-        nit.DirectMSG("NODE-01/SW1", initMSGSTR)
-        print("SW01 SENT.")
+        nit.DirectMSG("NODE-Docent1/CALL", initMSGSTR)
+        print("CALL PEAOPLE")
         flip = (~flip)
 
 
