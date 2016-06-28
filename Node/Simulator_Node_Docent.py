@@ -9,11 +9,11 @@ import json
 import NIT_Node_Module
 from terminalColor import bcolors
 
-NodeUUID = "NODE-SP"
+NodeUUID = "NODE-Docent1"
 # NodeUUID ="NODE-" +uuid.uuid1()
 
-Functions = ["LED1", "LED2"]
-NodeFunctions = ['IOs','Animal_Data']
+Functions = ["LED1", "LED2", "SW1"]
+NodeFunctions = ['IOs', 'IPCams']
 
 print("::::::::::::::::::::::::::::::::::::::::::\n")
 print("::::::::::::::::::::::::::::::::::::::::::\n")
@@ -61,19 +61,19 @@ def RxRouting(self, _obj_json_msg):
 
 
 
-#之後的Trigger設計
+
 global flip
 def loop():
     global flip
     decide = "g"
-    decide = input("Enter 't' to call Docent.......")
+    decide = input("enter 't' to trigger")
     print(decide)
 
-    initMSGObj = {'TopicName': "NODE-SP", 'Control': 'M2M_SET', 'Source': "NODE-SP", 'M2M_Value': flip}
+    initMSGObj = {'TopicName': "NODE-01/SW1", 'Control': 'M2M_SET', 'Source': "NODE-01", 'M2M_Value': flip}
     initMSGSTR = json.dumps(initMSGObj)
 
     if (decide == "t"):
-        nit.DirectMSG("NODE-SP", initMSGSTR)
+        nit.DirectMSG("NODE-01/SW1", initMSGSTR)
         print("SW01 SENT.")
         flip = (~flip)
 
