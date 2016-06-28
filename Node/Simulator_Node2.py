@@ -69,7 +69,7 @@ def loop():
     decide = input("Enter 't' to call Docent.......")
     print(decide)
 
-    initMSGObj = {'TopicName': "NODE-SP", 'Control': 'M2M_SET', 'Source': "NODE-SP", 'M2M_Value': flip}
+    initMSGObj = {'TopicName': "FS2", 'Control': 'CALL', 'Source': "NODE-SP", 'M2M_Value': flip}
     initMSGSTR = json.dumps(initMSGObj)
 
     if (decide == "t"):
