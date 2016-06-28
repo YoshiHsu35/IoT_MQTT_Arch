@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IoT_MQTT_Arch.iml" filepath="$PROJECT_DIR$/.idea/IoT_MQTT_Arch.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/iot-mqtt-infrastructure.iml" filepath="$PROJECT_DIR$/.idea/iot-mqtt-infrastructure.iml" />
     </modules>
   </component>

@@ -22,7 +22,7 @@ _g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-Docent1", "InputIO"
                            "OutputNode": "NODE-Phone2", "OutputIO": "LED4", "TargetValueOverride": "0"},
 
                           {"RuleID": "3", "InputNode": "NODE-Docent1", "InputIO": "CALL",
-                           "OutputNode": "NODE-SP", "OutputIO": "Welcome to The ZOOOOOOO", "TargetValueOverride": "EQU"},#實驗用
+                           "OutputNode": "NODE-SP", "OutputIO": "", "TargetValueOverride": "EQU"},#實驗用
 
                           #{"RuleID": "4", "InputNode": "NODE-01", "InputIO": "SW1",
                            #"OutputNode": "NODE-03", "OutputIO": "LED1", "TargetValueOverride": "EQU"},
