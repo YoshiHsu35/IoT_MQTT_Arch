@@ -15,20 +15,20 @@ import M2MFunctionServer
 #                         ["2", "Node1", "N1", "SW1", "Node2", "N2", "LED4", "0"],
 #                         ["3", "Node2", "N2", "SW2", "Node1", "N1", "LED2", "1"]]
 
-_g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-01", "InputIO": "SW1",
-                           "OutputNode": "NODE-02", "OutputIO": "LED3", "TargetValueOverride": "EQU"},
+_g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-pi-alarm", "InputIO": "SW1",
+                           "OutputNode": "NODE-phone", "OutputIO": "LED3", "TargetValueOverride": "EQU"},
 
                           {"RuleID": "2", "InputNode": "NODE-02", "InputIO": "SW1",
                            "OutputNode": "NODE-SP", "OutputIO": "LED4", "TargetValueOverride": "0"},
 
-                          {"RuleID": "3", "InputNode": "NODE-02", "InputIO": "SW2",
-                           "OutputNode": "NODE-RPi", "OutputIO": "LED2", "TargetValueOverride": "1"},#實驗用
+                          {"RuleID": "3", "InputNode": "NODE-phone", "InputIO": "SW1",
+                           "OutputNode": "NODE-pi-alarm", "OutputIO": "LED2", "TargetValueOverride": "1"},#實驗用
 
                           {"RuleID": "4", "InputNode": "fda50693a4e24fb1afcfc6eb07647825", "InputIO": "NODE-RPi",
                            "OutputNode": "NODE-SP", "OutputIO": "", "TargetValueOverride": "EQU"},
 
                            {"RuleID": "5", "InputNode": "fda50693a4e24fb1afcfc6eb07647825", "InputIO": "NODE-RPi",
-                           "OutputNode": "NODE-07", "OutputIO": "LED1", "TargetValueOverride": "EQU"} #此rule當作實驗
+                           "OutputNode": "NODE-phone", "OutputIO": "LED1", "TargetValueOverride": "EQU"} #此rule當作實驗
                           ]
 
 

@@ -27,7 +27,7 @@ class DecisionAction():
 
             m2mfsmrules = FunctionServerMappingRules()
             time.sleep(1)
-            m2mfsmrules.replyM2MTopicToNode("FS1", spreate_obj_json_msg["Node"])
+            m2mfsmrules.replyM2MTopicToNode("FS2", spreate_obj_json_msg["Node"])
 
 
         elif (spreate_obj_json_msg["Control"] == "M2M_GETRULE"):

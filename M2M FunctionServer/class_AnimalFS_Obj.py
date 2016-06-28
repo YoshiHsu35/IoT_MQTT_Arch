@@ -16,7 +16,7 @@ class JSON_REPTOPICLIST():
     def __init__(self):
         self.Source = Animal_FunctionServer._g_cst_FSUUID
         self.Gateway = ""
-        self.Control = "M2M_REPTOPICLIST"
+        self.Control = "Guide_REPTOPICLIST"
         self.SubscribeTopics = []  # SubscribeTopicsObj
 
 
