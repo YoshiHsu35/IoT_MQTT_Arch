@@ -69,7 +69,7 @@ def loop():
     decide = input("enter 't' to trigger")
     print(decide)
 
-    initMSGObj = {'TopicName': "NODE-01/SW1", 'Control': 'M2M_SET', 'Source': "NODE-01", 'M2M_Value': flip}
+    initMSGObj = {'TopicName': "NODE-01/SW1", 'Control': 'CALL', 'Source': "NODE-01", 'M2M_Value': flip}
     initMSGSTR = json.dumps(initMSGObj)
 
     if (decide == "t"):

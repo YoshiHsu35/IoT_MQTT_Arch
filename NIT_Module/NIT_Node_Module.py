@@ -50,8 +50,18 @@ class NIT_Node:
                     except (RuntimeError, TypeError, NameError) as e:
                         print(bcolors.FAIL + "[ERROR] Send Request for topic list error!" + str(e) + bcolors.ENDC)
                         return
+                if (fp[1] == "Guide"):
+                    try:
+                        ReqToFS = {"Node": "%s" % self.nodeUUID, "Control": "Guide_REQTOPICLIST",
+                                   "Source": "%s" % self.nodeUUID}
+                        Send_json = json.dumps(ReqToFS)
+                        publisher.MQTT_PublishMessage(fp[0], Send_json)
+                        class_Node_MQTTManager.SubscriberThreading(fp[0], self.nodeUUID).start()
+                    except (RuntimeError, TypeError, NameError) as e:
+                        print(bcolors.FAIL + "[ERROR] Send Request for topic list error!" + str(e) + bcolors.ENDC)
+                        return
 
-                    #ouo
+
         elif separation_obj_json_msg["Control"] == "M2M_REPTOPICLIST":
             for subTopic in separation_obj_json_msg["SubscribeTopics"]:
                 RuleObj = class_Node_Obj.M2M_RuleObj(subTopic["TopicName"], subTopic["Target"],
@@ -60,7 +70,15 @@ class NIT_Node:
                 self.Rules.append(RuleObj)
                 class_Node_MQTTManager.SubscriberThreading(subTopic["TopicName"], self.nodeUUID).start()
 
-        elif separation_obj_json_msg["Control"] == "M2M_SET":
+        elif separation_obj_json_msg["Control"] == "Guide_REPTOPICLIST":
+            for subTopic in separation_obj_json_msg["SubscribeTopics"]:
+                RuleObj = class_Node_Obj.M2M_RuleObj(subTopic["TopicName"], subTopic["Target"],
+                                                     subTopic["TargetValueOverride"])
+
+                self.Rules.append(RuleObj)
+                class_Node_MQTTManager.SubscriberThreading(subTopic["TopicName"], self.nodeUUID).start()
+
+        elif separation_obj_json_msg["Control"] == "CALL":
             for rule in self.Rules:
                 if rule.TopicName == separation_obj_json_msg["TopicName"]:
                     ####### You need custom something here #######

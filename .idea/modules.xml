@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/2015 IoT NEAT Infrastructure.iml" filepath="$PROJECT_DIR$/.idea/2015 IoT NEAT Infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/iot-mqtt-infrastructure.iml" filepath="$PROJECT_DIR$/.idea/iot-mqtt-infrastructure.iml" />
     </modules>
   </component>
 </project>

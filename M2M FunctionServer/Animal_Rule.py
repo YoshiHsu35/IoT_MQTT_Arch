@@ -16,10 +16,10 @@ import M2MFunctionServer
 #                         ["3", "Node2", "N2", "SW2", "Node1", "N1", "LED2", "1"]]
 
 _g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-Docent1", "InputIO": "Willy",
-                           "OutputNode": "NODE-SP", "OutputIO": "Welcome to The Animal Guide~", "TargetValueOverride": "EQU"},#訂閱某個導覽員
+                           "OutputNode": "NODE-Phone2", "OutputIO": "Welcome to The Animal Guide~", "TargetValueOverride": "EQU"},#訂閱某個導覽員
 
-                          #{"RuleID": "2", "InputNode": "NODE-02", "InputIO": "SW1",
-                           #"OutputNode": "NODE-SP", "OutputIO": "LED4", "TargetValueOverride": "0"},
+                          {"RuleID": "2", "InputNode": "NODE-pi-alarm", "InputIO": "SW1",
+                           "OutputNode": "NODE-Phone2", "OutputIO": "LED4", "TargetValueOverride": "0"},
 
                           #{"RuleID": "3", "InputNode": "NODE-02", "InputIO": "SW2",
                            #"OutputNode": "NODE-RPi", "OutputIO": "LED2", "TargetValueOverride": "1"},#實驗用
