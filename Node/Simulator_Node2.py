@@ -9,11 +9,11 @@ import json
 import NIT_Node_Module
 from terminalColor import bcolors
 
-NodeUUID = "NODE-SP"
+NodeUUID = "SPNODE@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77"
 # NodeUUID ="NODE-" +uuid.uuid1()
 
 Functions = ["LED1", "LED2"]
-NodeFunctions = ['IOs','Animal_Data']
+NodeFunctions = ['IOs','TOUR']
 
 print("::::::::::::::::::::::::::::::::::::::::::\n")
 print("::::::::::::::::::::::::::::::::::::::::::\n")
@@ -74,7 +74,7 @@ def loop():
 
     if (decide == "t"):
         nit.DirectMSG("NODE-SP", initMSGSTR)
-        print("SW01 SENT.")
+        print("SMART PHONE SENT.")
         flip = (~flip)
 
 

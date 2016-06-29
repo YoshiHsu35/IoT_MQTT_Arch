@@ -19,13 +19,13 @@ _g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-pi-alarm", "InputIO
                            "OutputNode": "NODE-phone", "OutputIO": "LED3", "TargetValueOverride": "EQU"},
 
                           {"RuleID": "2", "InputNode": "NODE-02", "InputIO": "SW1",
-                           "OutputNode": "NODE-SP", "OutputIO": "LED4", "TargetValueOverride": "0"},
+                           "OutputNode": "@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77", "OutputIO": "", "TargetValueOverride": "0"},
 
                           {"RuleID": "3", "InputNode": "NODE-phone", "InputIO": "SW1",
                            "OutputNode": "NODE-pi-alarm", "OutputIO": "LED2", "TargetValueOverride": "1"},#實驗用
 
-                          {"RuleID": "4", "InputNode": "fda50693a4e24fb1afcfc6eb07647825", "InputIO": "NODE-RPi",
-                           "OutputNode": "NODE-SP", "OutputIO": "", "TargetValueOverride": "EQU"},
+                          {"RuleID": "4", "InputNode": "fda50693a4e24fb1afcfc6eb07647825",
+                           "OutputNode": "SPNODE@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77", "TargetValueOverride": "EQU"},
 
                            {"RuleID": "5", "InputNode": "fda50693a4e24fb1afcfc6eb07647825", "InputIO": "NODE-RPi",
                            "OutputNode": "NODE-phone", "OutputIO": "LED1", "TargetValueOverride": "EQU"} #此rule當作實驗
@@ -51,8 +51,8 @@ class FunctionServerMappingRules():
             for SingleM2MMappingRule in readyToReplyTopics:
                 #### ASSIGN TO M2M FS ####
                 self.SubscribeTopics = class_M2MFS_Obj.SubscribeTopicsObj()
-                self.SubscribeTopics.TopicName = SingleM2MMappingRule["InputNode"] + \
-                                                 "/" + SingleM2MMappingRule["InputIO"]  # FS1
+                self.SubscribeTopics.TopicName = SingleM2MMappingRule["InputNode"]#這裡將NODE需要訂閱的TOPIC改到只剩一個名詞
+
                 self.SubscribeTopics.Node = SingleM2MMappingRule["OutputNode"]  # M2M
                 self.SubscribeTopics.Target = SingleM2MMappingRule["OutputIO"]
                 self.SubscribeTopics.TargetValueOverride = SingleM2MMappingRule["TargetValueOverride"]

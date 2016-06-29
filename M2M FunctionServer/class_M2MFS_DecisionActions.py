@@ -27,12 +27,12 @@ class DecisionAction():
 
             m2mfsmrules = FunctionServerMappingRules()
             time.sleep(1)
-            m2mfsmrules.replyM2MTopicToNode("FS1", spreate_obj_json_msg["Node"])
+            m2mfsmrules.replyM2MTopicToNode("FSFINDKID@FS-f28caacc-3df2-11e6-ac61-9e71128cae77", spreate_obj_json_msg["Node"])
 
 
         elif (spreate_obj_json_msg["Control"] == "M2M_GETRULE"):
             m2mfsmrules = FunctionServerMappingRules()
-            m2mfsmrules.replyM2MRulesAll("FS1")
+            m2mfsmrules.replyM2MRulesAll("FSFINDKID@FS-f28caacc-3df2-11e6-ac61-9e71128cae77")
 
         elif (spreate_obj_json_msg["Control"] == "M2M_ADDRULE"):
             m2mfsmrules = FunctionServerMappingRules()

@@ -21,8 +21,8 @@ _g_M2MRulesMappingList = [{"RuleID": "1", "InputNode": "NODE-Docent1", "InputIO"
                           {"RuleID": "2", "InputNode": "NODE-pi-alarm", "InputIO": "SW1",
                            "OutputNode": "NODE-Phone2", "OutputIO": "LED4", "TargetValueOverride": "0"},
 
-                          {"RuleID": "3", "InputNode": "NODE-Docent1", "InputIO": "CALL",
-                           "OutputNode": "NODE-SP", "OutputIO": "", "TargetValueOverride": "EQU"},#實驗用
+                          {"RuleID": "3", "InputNode": "NODEDOCENT@NODE-5ac42c3c-3df3-11e6-ac61-9e71128cae77",
+                           "OutputNode": "SPNODE@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77", "OutputIO": "", "TargetValueOverride": "EQU"},#實驗用
 
                           #{"RuleID": "4", "InputNode": "NODE-01", "InputIO": "SW1",
                            #"OutputNode": "NODE-03", "OutputIO": "LED1", "TargetValueOverride": "EQU"},
@@ -51,8 +51,8 @@ class FunctionServerMappingRules():
             for SingleM2MMappingRule in readyToReplyTopics:
                 #### ASSIGN TO M2M FS ####
                 self.SubscribeTopics = class_AnimalFS_Obj.SubscribeTopicsObj()
-                self.SubscribeTopics.TopicName = SingleM2MMappingRule["InputNode"] + \
-                                                 "/" + SingleM2MMappingRule["InputIO"]  # FS1
+                self.SubscribeTopics.TopicName = SingleM2MMappingRule["InputNode"]
+
                 self.SubscribeTopics.Node = SingleM2MMappingRule["OutputNode"]  # M2M
                 self.SubscribeTopics.Target = SingleM2MMappingRule["OutputIO"]
                 self.SubscribeTopics.TargetValueOverride = SingleM2MMappingRule["TargetValueOverride"]
