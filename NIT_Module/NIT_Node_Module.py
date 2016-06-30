@@ -83,7 +83,7 @@ class NIT_Node:
                 if rule.TopicName == separation_obj_json_msg["TopicName"]:
                     ####### You need custom something here #######
                     print(
-                        bcolors.OKGREEN + ">>WARNING<< FROM THE DOCENT : " +separation_obj_json_msg["MSG"]+ rule.Target + " " + bcolors.ENDC)
+                        bcolors.OKGREEN + ">>WARNING<< FROM THE INFROMATION DESK: " +separation_obj_json_msg["MSG"]+ rule.Target + " " + bcolors.ENDC)
 
     def DirectMSG(self, topicName, msg):
         publisher.MQTT_PublishMessage(topicName, msg)
