@@ -17,7 +17,7 @@ import config_ServerIPList
 
 _g_cst_ToMQTTTopicServerIP = config_ServerIPList._g_cst_ToMQTTTopicServerIP
 _g_cst_ToMQTTTopicServerPort = config_ServerIPList._g_cst_ToMQTTTopicServerPort
-_g_cst_IoTServerUUID = "IOTSV" #UUID
+_g_cst_IoTServerUUID = "IOTSVV8@IOTSV-5f00cdac-3e0a-11e6-ac61-9e71128cae77" #UUID
 
 _globalNodeList = []
 _globalFSList = []

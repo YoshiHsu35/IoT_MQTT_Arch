@@ -12,8 +12,8 @@ from terminalColor import bcolors
 NodeUUID = "SPNODE@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77"
 # NodeUUID ="NODE-" +uuid.uuid1()
 
-Functions = ["LED1", "LED2"]
-NodeFunctions = ['IOs','TOUR']
+Functions = ['M2M','Guide']
+NodeFunctions = ["IOs",'TOUR']
 
 print("::::::::::::::::::::::::::::::::::::::::::\n")
 print("::::::::::::::::::::::::::::::::::::::::::\n")
@@ -69,12 +69,12 @@ def loop():
     decide = input("Enter 't' to call Docent.......")
     print(decide)
 
-    initMSGObj = {'TopicName': "NODE-SP", 'Control': '', 'Source': "NODE-SP", 'M2M_Value': flip}
+    initMSGObj = {'TopicName': "SPNODE@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77", 'Control': '', 'Source': "NODE-SP", 'M2M_Value': flip}
     initMSGSTR = json.dumps(initMSGObj)
 
     if (decide == "t"):
         nit.DirectMSG("NODE-SP", initMSGSTR)
-        print("SMART PHONE SENT.")
+        print("SMART PHONE SENT:")
         flip = (~flip)
 
 

@@ -66,17 +66,17 @@ global flip
 def loop():
     global flip
     decide = "g"
-    decide = input("enter 't' to trigger")
+    decide = input("enter 'TALK' to trigger")
     print(decide)
-    if(decide=='t'):
+    if(decide=='TALK'):
         msg=input()
 
     initMSGObj = {'TopicName': "NODEDOCENT@NODE-5ac42c3c-3df3-11e6-ac61-9e71128cae77", 'Control': "CALL", 'Source': "NODEDOCENT@NODE-5ac42c3c-3df3-11e6-ac61-9e71128cae77", 'M2M_Value': flip, 'MSG': msg}
     initMSGSTR = json.dumps(initMSGObj)
 
-    if (decide == "t"):
+    if (decide == "TALK"):
         nit.DirectMSG("NODEDOCENT@NODE-5ac42c3c-3df3-11e6-ac61-9e71128cae77", initMSGSTR)
-        print("CALL PEAOPLE")
+        print("CALL PEOPLE")
         flip = (~flip)
 
 

@@ -10,7 +10,8 @@ import json
 from terminalColor import bcolors
 
 # 看到NodeFunction名為IOs的，代表該Node的訊息要Mapping到M2M的FS，他的TOPIC為FS1
-_g_FunctionServerMappingList = []
+_g_FunctionServerMappingList = [{"FunctionTopic": "FS1", "Function": "M2M", "NodeFunction": "IOs"},
+                                {"FunctionTopic": "FS2", "Function": "Guide", "NodeFunction": "Animal_Data"}]
 
 
 class FunctionServerMappingRules():
