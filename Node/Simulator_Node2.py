@@ -73,7 +73,7 @@ def loop():
     initMSGSTR = json.dumps(initMSGObj)
 
     if (decide == "t"):
-        nit.DirectMSG("NODE-SP", initMSGSTR)
+        nit.DirectMSG("SPNODE@NODE-0c98bc3e-3df4-11e6-ac61-9e71128cae77", initMSGSTR)
         print("SMART PHONE SENT:")
         flip = (~flip)
 
